@@ -1,0 +1,84 @@
+import datetime
+from math import pi
+from collections import Counter
+
+print("Question 1")
+x = datetime.datetime.now()
+print ("Todays date is %s-%s-%s" % (x.month, x.day, x.year))
+print ("The time is %s:%s:%s" % (x.hour, x.minute, x.second))
+
+print("Question 2")
+radious = float(input("What is the radius of the circle? "))
+print ("The area of the circle with radius " + str(radious) + " is: " + str(pi* radious **2))
+
+print("Question 3")
+print("Set 1:")
+set1 = set([1, 3, 5, 7, 9, 10])
+print(set1)
+print("Set 2:")
+set2 = set([2, 4, 6, 7, 9, 10])
+print(set2)
+print("Intersection of both sets:")
+print(set1 & set2)
+
+print("Question 4")
+lista = [5, 111, 300, 1000]
+print(lista)
+print(all(y >= 1 for y in lista))
+
+print("Question 5")
+A = 0
+B = 1
+while B < 50:
+    print(B)
+    A = B
+    B = A + B
+
+print("Question 6")
+factorial = 1
+Prefactored_num = int(input("please input a non-negative integer to get its factorial "))
+if Prefactored_num < 0:
+   print("Does not exist for negative numbers")
+elif Prefactored_num == 0:
+   print("1")
+else:
+   for X in range(1, Prefactored_num + 1):
+       factorial = factorial *X
+   print(factorial)
+
+print("Question 7")
+class Circle():
+    def __init__(self, r):
+        self.radius = r
+    def area(self):
+        return self.radius **2 *3.14
+    def perimeter(self):
+        return 2 *self.radius *3.14
+updated_Cicrle = Circle(10)
+print(updated_Cicrle.area())
+print(updated_Cicrle.perimeter())
+
+print("Question 8")
+def Tower_Of_Hanoi(n , a, b, c):
+    if n == 1:
+        print ("Move disk 1 from rod ",a,"to rod ",b)
+        return
+    Tower_Of_Hanoi(n-1, a, c, b)
+    print ("Move disk",n,"from rod ", a,"to rod ", b)
+    Tower_Of_Hanoi(n-1, c, b, a)
+n = 4
+Tower_Of_Hanoi(n, "A", "B", "C")
+
+print("Question 9")
+height = float(input("Height of trapezoid: "))
+base1 = float(input("Base one value: "))
+base2 = float(input("Base two value: "))
+area = ((base1 + base2) /2) *height
+print("The area is ", area)
+
+print("Question 10")
+from collections import Counter
+def word_count(Homework1):
+    with open(Homework1) as fn:
+        return Counter(fn.read().split())
+print("The number of words in the file :", word_count("Homework1.txt"))
